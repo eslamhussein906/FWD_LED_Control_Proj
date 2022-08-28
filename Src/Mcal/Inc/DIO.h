@@ -27,7 +27,7 @@
  *********************************************************************************************************************/
 
 #define GET_PORT_FROM_CHANNEL_ID(CHANNEL_ID)      (CHANNEL_ID/8)
-#define GET_BIT_FROM_CHANNEL_ID(CHANNEL_ID)				(1<<(CHANNEL_ID%8))
+#define GET_BIT_FROM_CHANNEL_ID(CHANNEL_ID)				(CHANNEL_ID%8)
 
 /**********************************************************************************************************************
  *  GLOBAL DATA TYPES AND STRUCTURES

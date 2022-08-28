@@ -43,7 +43,7 @@
 //#endif
 
 #define PIN_GPIO															 (Port_PinModeType)(16)
-#define PIN_Analog														  0
+#define PIN_ANALOG														  0
 
 #define PA0_U0Rx                               (Port_PinModeType)(1)
 #define PA0_CAN1Rx                             (Port_PinModeType)(8)
@@ -176,15 +176,15 @@
 #define PD5_U6Tx	      	                   	 (Port_PinModeType)(1)
 #define PD5_WT4CCP1	             	          	 (Port_PinModeType)(7)
 
-#define PD6_U2Rx	                 		       	 (Port_PinModeType)(PIN_ANALOG)
-#define PD6_M0FAULT0     	                   	 (Port_PinModeType)(1)
-#define PD6_PhA0  	             	          	 (Port_PinModeType)(2)
-#define PD6_WT5CCP0    		                  	 (Port_PinModeType)(6)
+#define PD6_U2Rx	                 		       	 (Port_PinModeType)(1)
+#define PD6_M0FAULT0     	                   	 (Port_PinModeType)(4)
+#define PD6_PhA0  	             	          	 (Port_PinModeType)(6)
+#define PD6_WT5CCP0    		                  	 (Port_PinModeType)(7)
 
-#define PD7_U2Tx	                 		       	 (Port_PinModeType)(PIN_ANALOG)
-#define PD7_PhB0	      	                   	 (Port_PinModeType)(1)
-#define PD7_WT5CCP1	             	          	 (Port_PinModeType)(2)
-#define PD7_NMI       		                  	 (Port_PinModeType)(6)
+#define PD7_U2Tx	                 		       	 (Port_PinModeType)(1)
+#define PD7_PhB0	      	                   	 (Port_PinModeType)(6)
+#define PD7_WT5CCP1	             	          	 (Port_PinModeType)(7)
+#define PD7_NMI       		                  	 (Port_PinModeType)(8)
 
 #define PE0_AIN3		               		       	 (Port_PinModeType)(PIN_ANALOG)
 #define PE0_U7Rx	      	                   	 (Port_PinModeType)(1)
@@ -245,7 +245,7 @@
 #define PF4_USB0EPEN 		           		       	 (Port_PinModeType)(8)
 
 #define PORTS_NUMBER														6
-#define GPIOS_PIN_NUMBER												43
+#define GPIOS_PIN_NUMBER												2
 #define GPIO_LOCK_KEY														(uint32)0x4C4F434B
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION MACROS
@@ -259,14 +259,14 @@ typedef struct
 {
 	Port_PinType PinName;
 	Port_PinModeType pinMode;
-	Port_PinLevelType PinLvl;
 	Port_PinDirectionType PinDir;
+	Port_PinLevelType PinLvl;
 	Port_PinInternalAttachType PinAttach;
 	Port_PinOutputCurrentType PinCur;
 } Port_configType;
 
 extern const Port_configType* ConfigPtr;
- 
+extern const Port_configType PortCfg[GPIOS_PIN_NUMBER];
 #endif  /* INTCTRL_CFG_H */
 
 /**********************************************************************************************************************

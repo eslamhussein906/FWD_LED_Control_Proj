@@ -55,7 +55,7 @@ typedef struct
 typedef struct
 {
 	uint8 Intr_Group_SubGroup;
-	uint8 IntrPriority;
+//	uint8 IntrBasePriority;
 	IntrCtrl_t IntrCtrlArray[INT_NUMBERS];
 }IntrCtrl_configs_t;
 
