@@ -177,7 +177,7 @@ void DIO_WritePort(DIO_PortType PortId, Dio_PortLevelType PortLevel)
 
 }
 
-DIO_LevelType DIO_FlipChannel(DIO_ChannelType ChannelId)
+void DIO_FlipChannel(DIO_ChannelType ChannelId)
 {
 	DIO_LevelType lvl = DIO_ReadChannel(ChannelId);
 	DIO_WriteChannel(ChannelId,!lvl);	

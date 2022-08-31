@@ -50,7 +50,7 @@ DIO_PortType DIO_ReadPort(DIO_PortType PortId);
 
 void DIO_WritePort(DIO_PortType PortId, Dio_PortLevelType PortLevel);
 
-DIO_LevelType DIO_FlipChannel(DIO_ChannelType ChannelId);
+void DIO_FlipChannel(DIO_ChannelType ChannelId);
 
  
 #endif 

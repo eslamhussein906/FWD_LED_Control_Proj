@@ -46,7 +46,7 @@ typedef enum
 
 typedef struct
 {
-	uint8 Intr_Index;							/* Interrupt number in vector table*/
+	uint8 IRQ_Type;								/* Interrupt number in vector table*/
 	Intr_status_t Intr_Enable;		/* Interrupt status (En/Dis)*/				
 	uint8 Intr_group_Priority;		/* Interrupt Group Priority */
 	uint8 Intr_SubGroup_Priority; /* Interrupt Sub Group Priority */
@@ -55,7 +55,6 @@ typedef struct
 typedef struct
 {
 	uint8 Intr_Group_SubGroup;
-//	uint8 IntrBasePriority;
 	IntrCtrl_t IntrCtrlArray[INT_NUMBERS];
 }IntrCtrl_configs_t;
 

@@ -71,7 +71,7 @@ void IntCrtl_Init(void)
 		{
 			if(IntrCtrl_cfg.IntrCtrlArray[loopCnt].Intr_Enable == INTR_ENABLED)
 			{
-				uint8 index 	= IntrCtrl_cfg.IntrCtrlArray[loopCnt].Intr_Index;
+				uint8 index 	= IntrCtrl_cfg.IntrCtrlArray[loopCnt].IRQ_Type;
 				if(index<16) /* Configuring the Exceptions*/
 				{
 					/*Set sub priority of each exception , Then Enable the Exception*/

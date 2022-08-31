@@ -56,29 +56,19 @@
 void Port_Init(const Port_configType* CnfgPtr)
 {
 	const Port_configType* CurPtr = CnfgPtr;
-	
-	Port_PinType PinName = CurPtr->PinName;
-	Port_PinModeType PinMode = CurPtr->pinMode;
-	Port_PinLevelType PinLvl = CurPtr->PinLvl;
-	Port_PinDirectionType PinDir = CurPtr->PinDir;
-	Port_PinInternalAttachType PinAttach = CurPtr->PinAttach;
-	Port_PinOutputCurrentType PinCur = CurPtr->PinCur;
 	volatile GPIOA_Type* PortAdd;
 	
-	PortType PortNum     = GPIO_GET_PORT_FROM_CHANNEL_ID(PinName);
-	uint8 PinNum		 		 = GPIO_GET_BIT_FROM_CHANNEL_ID(PinName);
-
 	for(uint8 loopcnt=0;loopcnt<GPIOS_PIN_NUMBER; loopcnt++)
 	{
-		PinName = CurPtr->PinName;
-		PinMode = CurPtr->pinMode;
-		PinLvl = CurPtr->PinLvl;
-		PinDir = CurPtr->PinDir;
-		PinAttach = CurPtr->PinAttach;
-		PinCur = CurPtr->PinCur;
+		Port_PinType PinName = CurPtr->PinName;
+		Port_PinModeType PinMode = CurPtr->pinMode;
+		Port_PinLevelType PinLvl = CurPtr->PinLvl;
+		Port_PinDirectionType PinDir = CurPtr->PinDir;
+		Port_PinInternalAttachType PinAttach = CurPtr->PinAttach;
+		Port_PinOutputCurrentType PinCur = CurPtr->PinCur;
 		
-		PortNum  = GPIO_GET_PORT_FROM_CHANNEL_ID(PinName);	/* Get Port Number from Pin Name*/
-		PinNum	 = GPIO_GET_BIT_FROM_CHANNEL_ID(PinName);		/* Get Pin number from Pin Name*/
+		PortType PortNum  = GPIO_GET_PORT_FROM_CHANNEL_ID(PinName);	/* Get Port Number from Pin Name*/
+		uint8 PinNum	 = GPIO_GET_BIT_FROM_CHANNEL_ID(PinName);		/* Get Pin number from Pin Name*/
 		switch(PortNum)
 		{
 			case PORTA: PortAdd=GPIOA;

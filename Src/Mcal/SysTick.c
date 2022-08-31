@@ -55,7 +55,7 @@ void SysTick_init(uint32 STRELOAD_Val)
 {
 
 	SYSTICK_STCTRL->BF.EN=0;           /*The counter is disabled*/
-	SYSTICK->STRELOAD =STRELOAD_Val ;  /*Program the value in the STRELOAD register*/
+	SYSTICK->STRELOAD =STRELOAD_Val-1 ;  /*Program the value in the STRELOAD register*/
 	SYSTICK->STCURRENT=0x01;           /*Clear the STCURRENT register by writing to it with any value , it also clears COUNT reg*/
 	/*Configure the STCTRL register for the required operation.*/
 	if(SYSTICK_USE_PIOSC)						 
@@ -86,6 +86,8 @@ void SysTick_SetCBFunc(void(*CB_FuncPtr)(void))
 void SysTick_Reload(uint32 STRELOAD_Val)
 {
 	SYSTICK->STRELOAD =STRELOAD_Val;   /*Program the value in the STRELOAD register*/
+	SYSTICK_STCTRL->BF.EN=0; /*The counter is disabled*/
+	SYSTICK_STCTRL->BF.EN=1;	/*The counter is enabled */	
 }
 
 void SysTick_Handler(void)
